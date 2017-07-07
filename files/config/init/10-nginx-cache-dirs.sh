@@ -9,4 +9,4 @@ set -e
 
 mkdir -p /run/user/nginx-cache
 mkdir -p /run/user/nginx-cache-tmp
-chown -R www:www /run/user/nginx-cache*
+chown -R nginx:nginx /run/user/nginx-cache*

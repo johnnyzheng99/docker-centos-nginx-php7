@@ -32,12 +32,10 @@ RUN easy_install supervisor
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 #Update nginx user group and name
-RUN groupmod --gid 80 --new-name www nginx && \
-    usermod --uid 80 --home /data/www --gid 80 --login www --shell /bin/bash --comment www nginx
 RUN rm -rf /etc/nginx/*.d /etc/nginx/*_params && \
     mkdir -p /data/www && \
     mkdir -p /data/logs && \
-    chown -R www:www /var/www /data/www
+    chown -R nginx:nginx /var/www /data/www
     #lib/nginx
 
 #Add pre-configured files
